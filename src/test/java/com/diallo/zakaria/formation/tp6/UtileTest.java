@@ -12,6 +12,23 @@ public class UtileTest extends TestCase {
     int i = Utile.toInt(d);
     assertEquals(20131221, i);
  }
+ 
+ public void testToInt2() {
+	    Date d = new Date();
+	    try {
+			int i = Utile.toInt(null);
+			fail("java.lang.NullPointerException not catch");
+		} catch (NullPointerException e) {
+			System.err.println(e.getMessage());
+		}catch (NumberFormatException e) {
+			System.err.println(e.getMessage());
+		}catch (IllegalArgumentException e) {
+			// TODO: handle exception
+			System.err.println(e.getMessage());
+		}
+	    
+	 }
+ 
   private Date getTestDate() {
     try {
       return DateFormat.getDateInstance(
